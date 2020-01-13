@@ -1,0 +1,18 @@
+The package contains the following files:
+
+bigg_universal_model.mat: BiGG universal model in COBRA format
+
+metacyc_universal_model.mat: MetaCyc universal model in COBRA format
+
+metacyc_universal_model_limonene.mat: Model as in metacyc_universal_model.mat but with additional limonene exchange reaction
+
+bigg_CETCH_screening.m: script for screening up to 10 solutions that fulfill the CETCH requirements for each substrate in the BiGG model. Can be adapted to calculate solutions for modified CETCH requirements as well as solutions with multiple substrate uptakes.
+
+metacyc_universal_model.m: script for screening up to 10 solutions that fulfill the CETCH requirements for each substrate in the MetaCyc model Can be adapted to calculate solutions for modified CETCH requirements as well as solutions with multiple substrate uptakes.
+
+metacyc_limonene_screening.m: script for calculating solutions for the limonene production from glucose with a minimum yield of 1/3 limonene per glucose
+
+Before using the scripts CellNetAnalyzer must have been started and the CPLEX setup been configured (files javalibrarypath.txt and startcna.m). In addition, set up the CPLEX remote configuration like this
+cnan.cplex_remote.transport_name= 'processtransport';
+cnan.cplex_remote.transport_args= {'/mechthild/home/vonkamp/CPLEX_Studio128/cplex/bin/x86-64_linux/cplex', '-worker=process'};
+                                    ^^^ set this to point to your CPLEX binary
