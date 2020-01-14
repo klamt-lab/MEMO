@@ -28,7 +28,7 @@ exchange_off= {'EX_HYDROGEN-PEROXIDE'};
 [~, exchange_off]= ismember(exchange_off, model.rxns);
 reac_off= {'ATPASE-RXN'};
 [~, reac_off]= ismember(reac_off, model.rxns);
-reac_off= [reac_off acetylcons];
+reac_off= [reac_off acetylcons atpm NADHcons NADPHcons];
 
 %% thermodynamic parameters
 RT= 1.9872036E-3 * (25 + 273.15); % [kc/mol] ;
